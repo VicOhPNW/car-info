@@ -83,12 +83,12 @@ public class Program
     // Car thirdCar = new Car("2013 Lexus RX 350", 20000);
     // Car fourthCar = new Car("Mercedes Benz CLS550", 37979);
 
-    Car firstCar = new Car("2014 Porsche 911", 114991, "this car is red", 7864);
+    Car firstCar = new Car("2014 Porsche 911", 114991, "this car is red");
     // firstCar.SetMakeModel("2014 Porsche 911");
     // firstCar.SetPrice(114991);
     // firstCar.SetMiles(7864);
 
-    Car secondCar = new Car("2011 Ford F450", 55995, "this car smells", 14241);
+    Car secondCar = new Car("2011 Ford F450", 55995, "this car smells");
     // secondCar.SetMakeModel("2011 Ford F450");
     // secondCar.SetPrice(55995);
     // secondCar.SetMiles(14241);
@@ -113,12 +113,17 @@ public class Program
       }
     }
 
-    foreach(Car automobile in CarsMatchingSearch)
+    if (CarsMatchingSearch.Count == 0)
     {
-      Console.WriteLine(automobile.GetMakeModel());
-      Console.WriteLine(automobile.GetCarNote());
+      Console.WriteLine("Sorry no match");
     }
-
-
+    else
+    {
+      foreach(Car automobile in CarsMatchingSearch)
+      {
+        Console.WriteLine(automobile.GetMakeModel());
+        Console.WriteLine(automobile.GetCarNote());
+      }
+    }
   }
 }
