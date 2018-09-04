@@ -6,12 +6,14 @@ class Car
   private string _makeModel;
   private int _price;
   private int _miles;
+  private string _carNote;
 
-  public Car(string carModel, int carMiles, int carPrice = 2000)
+  public Car(string carModel, int carMiles, string carNote, int carPrice = 2000)
   {
     _makeModel = carModel;
     _price = carPrice;
     _miles = carMiles;
+    _carNote = carNote;
   }
 
   public void SetMakeModel(string newMakeModel)
@@ -39,6 +41,15 @@ class Car
   public int GetMiles()
   {
     return _miles;
+  }
+
+  public void SetCarNote(string newCarNote)
+  {
+    _carNote = newCarNote;
+  }
+  public string GetCarNote()
+  {
+    return _carNote;
   }
 
 }
@@ -72,12 +83,12 @@ public class Program
     // Car thirdCar = new Car("2013 Lexus RX 350", 20000);
     // Car fourthCar = new Car("Mercedes Benz CLS550", 37979);
 
-    Car firstCar = new Car("2014 Porsche 911", 114991, 7864);
+    Car firstCar = new Car("2014 Porsche 911", 114991, "this car is red", 7864);
     // firstCar.SetMakeModel("2014 Porsche 911");
     // firstCar.SetPrice(114991);
     // firstCar.SetMiles(7864);
 
-    Car secondCar = new Car("2011 Ford F450", 55995, 14241);
+    Car secondCar = new Car("2011 Ford F450", 55995, "this car smells", 14241);
     // secondCar.SetMakeModel("2011 Ford F450");
     // secondCar.SetPrice(55995);
     // secondCar.SetMiles(14241);
@@ -105,6 +116,7 @@ public class Program
     foreach(Car automobile in CarsMatchingSearch)
     {
       Console.WriteLine(automobile.GetMakeModel());
+      Console.WriteLine(automobile.GetCarNote());
     }
 
 
